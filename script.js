@@ -7,6 +7,7 @@ const btnContinue = document.getElementById("btnContinue");
 const bedrockCheck = document.getElementById("bedrockCheck");
 const toast = document.getElementById("customToast");
 const toastMsg = document.getElementById("toastMessage");
+const loginLink = document.querySelector(".login-link");
 
 btns.forEach(btn => {
     btn.onclick = () => {
@@ -26,6 +27,11 @@ window.onclick = (event) => {
     }
 };
 
+loginLink.onclick = (e) => {
+    e.preventDefault();
+    modal.style.display = "block";
+};
+
 
 userInput.oninput = function() {
     let username = this.value.trim();
@@ -43,6 +49,7 @@ btnContinue.onclick = () => {
 
     if (username === "") {
         userInput.style.borderColor = "red";
+        userInput.placeholder = "¡Escribe tu nombre!";
         setTimeout(() => userInput.style.borderColor = "#222", 2000);
     } else {
         if (isBedrock && !username.startsWith(".")) {
@@ -50,10 +57,24 @@ btnContinue.onclick = () => {
         }
         
         modal.style.display = "none";
+        
         showNotification(username);
         
-        document.querySelector(".guest-text").innerText = username;
-        document.querySelector(".mini-head").src = `https://mc-heads.net/avatar/${username}/32`;
+        const guestText = document.querySelector(".guest-text");
+        const loginLink = document.querySelector(".login-link");
+        const miniHead = document.querySelector(".mini-head");
+        const cartTitle = document.querySelector(".cart-title");
+
+        guestText.innerText = username;
+        guestText.style.color = "var(--god-color)"; 
+        
+        loginLink.innerText = "CAMBIAR DE PERSONAJE"; 
+        loginLink.style.fontSize = "0.6rem";
+        
+        miniHead.src = `https://mc-heads.net/avatar/${username}/32`;
+        cartTitle.innerText = `Carro de ${username}`;
+        
+        console.log("Sesión iniciada para: " + username);
     }
 };
 
