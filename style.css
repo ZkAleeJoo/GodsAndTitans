@@ -557,3 +557,52 @@ body {
 }
 
 #cartTotalPrice { color: var(--gold); }
+
+/* --- ESTILOS DE PAGO --- */
+.payment-methods {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.method-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.method-card:hover {
+    border-color: var(--gold);
+    background: #1a1a1a;
+    transform: translateX(10px);
+}
+
+.method-card i { font-size: 1.5rem; color: var(--gold); width: 30px; text-align: center; }
+
+/* --- PANTALLA DE ÉXITO --- */
+.success-icon {
+    font-size: 5rem;
+    color: var(--gold);
+    text-shadow: 0 0 30px var(--titan-color);
+    margin-bottom: 20px;
+    animation: breathing 2s infinite;
+}
+
+.epic-title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: white;
+    text-shadow: 0 0 20px var(--god-color);
+}
+
+.success-glow {
+    animation: slideUpFade 0.8s ease-out forwards;
+}
