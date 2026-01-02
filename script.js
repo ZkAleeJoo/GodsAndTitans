@@ -28,13 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (savedUser) {
         setLoggedUser(savedUser);
     }
-    renderProducts("divinos"); 
+    renderProducts("divinos"); // Carga inicial por defecto
 });
 
+/**
+ * Aplica los cambios visuales cuando un usuario inicia sesión
+ *
+ */
 function setLoggedUser(username) {
-    const guestText = document.querySelector(".guest-text");
-    guestText.innerText = username;
-    guestText.classList.add("logged-in"); 
+    const guestText = document.getElementById("userDisplayName");
+    if (guestText) {
+        guestText.innerText = username;
+        guestText.classList.add("logged-in"); // ACTIVA EL BRILLO Y COLOR DIVINO EN CSS
+    }
     
     document.querySelector(".mini-head").src = `https://mc-heads.net/avatar/${username}/32`;
     document.querySelector(".cart-title").innerText = `Carro de ${username}`;
@@ -49,6 +55,7 @@ document.querySelector(".login-link").onclick = (e) => {
     modal.style.display = "block";
 };
 
+// Actualiza la cabeza de skin en tiempo real al escribir
 userInput.oninput = function() {
     let username = this.value.trim();
     userHead.src = username.length > 2 
@@ -64,6 +71,7 @@ btnContinue.onclick = () => {
         return;
     }
 
+    // Prefijo para usuarios de Bedrock
     if (bedrockCheck.checked && !username.startsWith(".")) {
         username = "." + username;
     }
@@ -82,13 +90,13 @@ function copyIP() {
     navigator.clipboard.writeText(ipText).then(() => {
         showNotification("¡IP COPIADA! Pégala en tu Minecraft.");
         const ipBox = document.querySelector(".ip-copy-box");
-        ipBox.style.borderColor = "var(--success-green)";
+        ipBox.style.borderColor = "var(--success-green)"; // Feedback visual verde
         setTimeout(() => ipBox.style.borderColor = "rgba(255, 215, 0, 0.2)", 2000);
     });
 }
 
 /* =========================================
-   CARRITO Y PRODUCTOS
+   CARRITO Y PRODUCTOS DINÁMICOS
    ========================================= */
 const productsData = {
     divinos: [
@@ -101,11 +109,19 @@ const productsData = {
     ],
     llaves: [
         { name: "KEY OLIMPO", price: "5.00", tag: "X5 LLAVES", type: "god", btn: "PROBAR SUERTE" }
+    ],
+    desbaneos: [
+        { name: "UNBAN", price: "10.00", tag: "ÚNICO", type: "titan", btn: "PEDIR PERDÓN" }
+    ],
+    extras: [
+        { name: "COSMÉTICOS", price: "7.00", tag: "PACK", type: "god", btn: "VER MÁS" }
     ]
 };
 
 function renderProducts(category) {
     const container = document.getElementById("productsContainer");
+    if (!container) return;
+    
     container.innerHTML = "";
     
     (productsData[category] || []).forEach(p => {
@@ -123,6 +139,7 @@ function renderProducts(category) {
     });
 }
 
+// Navegación de categorías
 document.querySelectorAll(".nav-item").forEach(item => {
     item.onclick = (e) => {
         e.preventDefault();
@@ -133,6 +150,7 @@ document.querySelectorAll(".nav-item").forEach(item => {
 });
 
 function addToCart(name, price) {
+    // Verificar si el usuario está logueado antes de comprar
     if (localStorage.getItem("mcUser") === null) {
         modal.style.display = "block";
         return;
@@ -197,6 +215,14 @@ function showNotification(msg) {
     setTimeout(() => toast.classList.remove("active"), 4000);
 }
 
+// Cerrar modales al hacer clic fuera de ellos
 window.onclick = (e) => {
     if (e.target.className === "modal") e.target.style.display = "none";
 };
+
+// Cerrar modales con el botón X
+document.querySelectorAll(".close-modal").forEach(span => {
+    span.onclick = () => {
+        span.closest(".modal").style.display = "none";
+    };
+});
