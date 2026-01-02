@@ -15,6 +15,10 @@ const closeCart = document.getElementById("closeCart");
 const cartItemsList = document.getElementById("cartItemsList");
 const cartTotalPrice = document.getElementById("cartTotalPrice");
 const cartCountElement = document.querySelector(".cart-count");
+const paymentModal = document.getElementById("paymentModal");
+const successModal = document.getElementById("successModal");
+const btnCheckout = document.getElementById("btnCheckout");
+const closePayment = document.getElementById("closePayment");
 
 btns.forEach(btn => {
     btn.onclick = () => {
@@ -239,3 +243,30 @@ function renderProducts(category) {
         productsContainer.appendChild(card);
     });
 }
+
+btnCheckout.onclick = () => {
+    if (cart.length === 0) {
+        showNotification("¡Tu carrito está vacío!");
+        return;
+    }
+    cartModal.style.display = "none";
+    paymentModal.style.display = "block";
+};
+
+closePayment.onclick = () => paymentModal.style.display = "none";
+
+window.processFinalPayment = function(method) {
+    paymentModal.style.display = "none";
+    
+    const total = cart.reduce((acc, item) => acc + item.price, 0);
+    const username = document.querySelector(".guest-text").innerText;
+
+    document.getElementById("successDetail").innerText = `Gracias, ${username}. Has pagado ${total.toFixed(2)} USD vía ${method}.`;
+    
+    successModal.style.display = "block";
+    
+    console.log(`Pago procesado con éxito para ${username}. Método: ${method}`);
+    
+    cart = [];
+    updateCartUI();
+};
