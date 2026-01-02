@@ -3,38 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gods & Titans Craft | Tienda Oficial</title>
+    <title>Gods & Titans Craft | Official Store</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script> 
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="server-icon.jpg" alt="Gods & Titans Logo" class="main-logo">
-            <h1>GODS & TITANS <span>CRAFT</span></h1>
+
+    <header class="main-header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <div class="server-status">
+                <div class="status-item">
+                    <span class="count">32</span>
+                    <span class="label">GODS.CRAFT.ES <br> <b>CLICK PARA COPIAR</b></span>
+                </div>
+                <img src="server-icon.jpg" alt="Logo" class="main-logo">
+                <div class="status-item">
+                    <span class="count">1,073</span>
+                    <span class="label">SERVIDOR DE DISCORD <br> <b>CLICK PARA UNIRSE</b></span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="container">
+    <div class="container main-layout">
         <aside class="sidebar">
-            <h3>CATEGORÍAS</h3>
-            <ul>
-                <li class="active">RANGOS DIVINOS</li>
-                <li>RANGOS TITANES</li>
-                <li>LLAVES MÍTICAS</li>
-            </ul>
+            <h3 class="category-title">SELECCIONA CATEGORÍA</h3>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">RANGOS DIVINOS</a>
+                <a href="#" class="nav-item">RANGOS TITANES</a>
+                <a href="#" class="nav-item">LLAVES Y CAJAS</a>
+                <a href="#" class="nav-item">DESBANEOS</a>
+            </nav>
         </aside>
 
-        <section class="products">
-            <div class="card god-card">
-                <div class="card-header">
-                    <span class="tag">PERMANENTE</span>
-                    <h2>ZEUS</h2>
+        <section class="content-area">
+            <div class="section-header">
+                <h2>ARTÍCULOS MÁS COMPRADOS</h2>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card god">
+                    <div class="card-tag">PERMANENTE</div>
+                    <div class="card-body">
+                        <h3>ZEUS</h3>
+                        <p class="price">25.00 <span>EUR</span></p>
+                    </div>
+                    <button class="buy-btn">COMPRAR PODER</button>
                 </div>
-                <div class="price">25.00 EUR</div>
-                <button class="btn-buy">ADQUIRIR PODER</button>
+
+                <div class="product-card titan">
+                    <div class="card-tag">PERMANENTE</div>
+                    <div class="card-body">
+                        <h3>CRONOS</h3>
+                        <p class="price">25.00 <span>EUR</span></p>
+                    </div>
+                    <button class="buy-btn">DESATAR CAOS</button>
+                </div>
+            </div>
+
+            <div class="monthly-goal">
+                <div class="goal-info">
+                    <span>META MENSUAL</span>
+                    <span>15%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 15%;"></div>
+                </div>
             </div>
         </section>
-    </main>
+    </div>
+
 </body>
 </html>
