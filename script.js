@@ -4,6 +4,7 @@ const span = document.querySelector(".close-modal");
 const userInput = document.getElementById("mcUsername");
 const userHead = document.getElementById("userHead");
 const btnContinue = document.getElementById("btnContinue");
+const bedrockCheck = document.getElementById("bedrockCheck");
 
 btns.forEach(btn => {
     btn.onclick = () => {
@@ -35,10 +36,15 @@ userInput.oninput = function() {
 };
 
 btnContinue.onclick = () => {
-    const username = userInput.value.trim();
+    let username = userInput.value.trim();
+    const isBedrock = bedrockCheck.checked;
+
     if (username === "") {
-        alert("¡Por favor, introduce tu nombre de usuario para continuar!");
+        alert("¡Por favor, introduce tu nombre de usuario!");
     } else {
+        if (isBedrock && !username.startsWith(".")) {
+            username = "." + username;
+        }
         console.log("Usuario identificado: " + username);
         alert("¡Identidad confirmada, " + username + "! Procediendo al Olimpo...");
         modal.style.display = "none";
