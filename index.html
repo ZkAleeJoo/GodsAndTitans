@@ -14,11 +14,12 @@
 <body>
 
     <div class="top-bar">
-        <div class="top-bar-content">
-            <div class="top-left"></div>
+    <div class="top-bar-content">
+        <div class="top-left"></div> </div>
+    </div>
 
-            <div class="top-right">
-                <div class="user-status">
+    <div class="top-right">
+        <div class="user-status">
                     <span class="guest-text">Invitado</span>
                     <a href="#" class="login-link">CLICK PARA INICIAR SESIÓN</a>
                 </div>
@@ -36,16 +37,31 @@
         </div>
     </div>
 
-    <header class="main-header">
-        <div class="overlay"></div>
-        <div class="header-content">
-            <div class="logo-wrapper">
-                <img src="logo.png" alt="Gods & Titans Logo" class="main-logo">
-            </div>
-        </div>
-    </header>
+        <header class="main-header">
+            <div class="overlay"></div>
+            <div class="header-content">
+                <div class="header-flex-container">
+                    <div class="ip-copy-box" onclick="copyIP()" title="Haz clic para copiar">
+                        <div class="ip-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="ip-details">
+                            <span class="ip-title">ÚNETE AL PANTEÓN</span>
+                            <span class="ip-address" id="serverIP">PLAY.GODSANDTITANS.NET</span>
+                        </div>
+                        <div class="ip-status-indicator">
+                            <span class="online-dot"></span>
+                            <span id="playerCount">452</span>
+                        </div>
+                    </div>
 
-    <!--SECCIÓN PRINCIPAL PARA LAS COMPRAS-->
+                    <div class="logo-wrapper">
+                        <img src="logo.png" alt="Gods & Titans Logo" class="main-logo">
+                    </div>
+                </div>
+            </div>
+        </header>
+
     <div class="container main-layout">
         <aside class="sidebar">
             <h3 class="category-title">SELECCIONA UNA CATEGORÍA</h3>
@@ -68,7 +84,6 @@
             </nav>
         </aside>
 
-        <!--META GLOBAL-->
         <section class="content-area">
             <div class="section-header">
                 <h2>ARTÍCULOS DISPONIBLES</h2>
@@ -89,7 +104,6 @@
         </section>
     </div>
 
-    <!--MODAL PARA EL NOMBRE DEL USER-->
     <div id="userModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -113,7 +127,6 @@
         </div>
     </div>
 
-    <!--MODAL PARA EL CARRITO DE COMPRAS-->
     <div id="cartModal" class="modal">
         <div class="modal-content" style="width: 500px;">
             <span class="close-modal" id="closeCart">&times;</span>
@@ -131,7 +144,6 @@
         </div>
     </div>
 
-    <!--MODAL PARA EL MÉTODO DE PAGO-->
     <div id="paymentModal" class="modal">
         <div class="modal-content" style="width: 450px;">
             <span class="close-modal" id="closePayment">&times;</span>
@@ -161,12 +173,11 @@
             </div>
             <h1 class="epic-title">¡PEDIDO CONFIRMADO!</h1>
             <p id="successDetail" style="font-size: 1.2rem; color: var(--gold); font-weight: 700;"></p>
-            <p>Tus poderes están siendo procesados. Revisa tu correo o el comando /donador en el servidor.</p>
+            <p>Tus poderes están siendo procesados. Revisa tu correo o usa /donador en el servidor.</p>
             <button class="continue-btn" onclick="location.reload()" style="margin-top: 30px; width: 200px;">VOLVER AL INICIO</button>
         </div>
     </div>
 
-    <!--TOAST DE CONFIRMACIÓN-->
     <div id="customToast" class="toast-container">
         <div class="toast-content">
             <i class="fas fa-check-circle"></i>

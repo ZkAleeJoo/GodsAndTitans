@@ -606,3 +606,98 @@ body {
 .success-glow {
     animation: slideUpFade 0.8s ease-out forwards;
 }
+
+/* Brillo dinámico para el logo */
+.main-logo {
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+    animation: breathing 4s ease-in-out infinite, god-glow 6s infinite alternate;
+}
+
+@keyframes god-glow {
+    0% { filter: drop-shadow(0 0 10px var(--god-color)); }
+    100% { filter: drop-shadow(0 0 30px var(--titan-color)); }
+}
+
+/* --- NUEVA CAJA DE IP EN HEADER --- */
+.header-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Espacio entre la IP y el Logo */
+    position: relative;
+    z-index: 5;
+}
+
+.ip-copy-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.ip-copy-box:hover {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.ip-icon i {
+    font-size: 1.5rem;
+    color: var(--gold);
+}
+
+.ip-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.ip-title {
+    font-size: 0.65rem;
+    font-weight: 900;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.ip-address {
+    font-size: 1rem;
+    font-weight: 900;
+    color: white;
+}
+
+.ip-status-indicator {
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.online-dot {
+    width: 8px;
+    height: 8px;
+    background: #4caf50;
+    border-radius: 50%;
+    margin-bottom: 4px;
+    box-shadow: 0 0 10px #4caf50;
+}
+
+#playerCount {
+    font-size: 0.75rem;
+    font-weight: 900;
+}
+
+/* Ajuste móvil para que no se rompa */
+@media (max-width: 768px) {
+    .header-flex-container {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+}

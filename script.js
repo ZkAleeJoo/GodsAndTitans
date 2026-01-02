@@ -20,6 +20,20 @@ const successModal = document.getElementById("successModal");
 const btnCheckout = document.getElementById("btnCheckout");
 const closePayment = document.getElementById("closePayment");
 
+document.addEventListener("DOMContentLoaded", () => {
+    const savedUser = localStorage.getItem("mcUser");
+    if (savedUser) {
+        setLoggedUser(savedUser);
+    }
+});
+
+function setLoggedUser(username) {
+    document.querySelector(".guest-text").innerText = username;
+    document.querySelector(".mini-head").src = `https://mc-heads.net/avatar/${username}/32`;
+    document.querySelector(".cart-title").innerText = `Carro de ${username}`;
+    document.querySelector(".login-link").innerText = "CAMBIAR DE PERSONAJE";
+}
+
 btns.forEach(btn => {
     btn.onclick = () => {
         modal.style.display = "block";
@@ -56,36 +70,11 @@ userInput.oninput = function() {
 
 btnContinue.onclick = () => {
     let username = userInput.value.trim();
-    const isBedrock = bedrockCheck.checked;
-
-    if (username === "") {
-        userInput.style.borderColor = "red";
-        userInput.placeholder = "¡Escribe tu nombre!";
-        setTimeout(() => userInput.style.borderColor = "#222", 2000);
-    } else {
-        if (isBedrock && !username.startsWith(".")) {
-            username = "." + username;
-        }
-        
+    if (username !== "") {
+        localStorage.setItem("mcUser", username); 
+        setLoggedUser(username);
         modal.style.display = "none";
-        
         showNotification(username);
-        
-        const guestText = document.querySelector(".guest-text");
-        const loginLink = document.querySelector(".login-link");
-        const miniHead = document.querySelector(".mini-head");
-        const cartTitle = document.querySelector(".cart-title");
-
-        guestText.innerText = username;
-        guestText.style.color = "var(--god-color)"; 
-        
-        loginLink.innerText = "CAMBIAR DE PERSONAJE"; 
-        loginLink.style.fontSize = "0.6rem";
-        
-        miniHead.src = `https://mc-heads.net/avatar/${username}/32`;
-        cartTitle.innerText = `Carro de ${username}`;
-        
-        console.log("Sesión iniciada para: " + username);
     }
 };
 
@@ -270,3 +259,19 @@ window.processFinalPayment = function(method) {
     cart = [];
     updateCartUI();
 };
+
+function copyIP() {
+    const ipText = document.getElementById("serverIP").innerText;
+    
+    navigator.clipboard.writeText(ipText).then(() => {
+        showNotification("¡IP COPIADA! Te esperamos en el servidor.");
+        
+        const ipBox = document.querySelector(".ip-copy-box");
+        ipBox.style.borderColor = "#4caf50";
+        setTimeout(() => {
+            ipBox.style.borderColor = "rgba(255, 215, 0, 0.2)";
+        }, 2000);
+    }).catch(err => {
+        console.error('Error al copiar: ', err);
+    });
+}
