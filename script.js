@@ -127,7 +127,7 @@ function renderProducts(category) {
             <div class="card-tag">${p.tag}</div>
             <div class="card-body">
                 <h3>${p.name}</h3>
-                <p class="price">${p.price} <span>EUR</span></p>
+                <p class="price">${p.price} <span>USD</span></p>
             </div>
             <button class="buy-btn">${p.btn}</button>
         `;
