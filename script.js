@@ -8,6 +8,13 @@ const bedrockCheck = document.getElementById("bedrockCheck");
 const toast = document.getElementById("customToast");
 const toastMsg = document.getElementById("toastMessage");
 const loginLink = document.querySelector(".login-link");
+let cart = [];
+const cartInfo = document.querySelector(".cart-info");
+const cartModal = document.getElementById("cartModal");
+const closeCart = document.getElementById("closeCart");
+const cartItemsList = document.getElementById("cartItemsList");
+const cartTotalPrice = document.getElementById("cartTotalPrice");
+const cartCountElement = document.querySelector(".cart-count");
 
 btns.forEach(btn => {
     btn.onclick = () => {
@@ -79,7 +86,7 @@ btnContinue.onclick = () => {
 };
 
 function showNotification(user) {
-    toastMsg.innerText = `¡Bienvenido, ${user}! Tu rango te espera.`;
+    toastMsg.innerText = `Tu paquete ${user} fue llenado al carrito`;
     toast.classList.add("active");
     
     setTimeout(() => {
@@ -157,3 +164,78 @@ function attachBuyEvents() {
 }
 
 renderProducts("divinos");
+
+cartInfo.onclick = () => {
+    updateCartUI();
+    cartModal.style.display = "block";
+};
+
+closeCart.onclick = () => cartModal.style.display = "none";
+
+function addToCart(productName, price) {
+    const currentUser = document.querySelector(".guest-text").innerText;
+    
+    if (currentUser === "Invitado") {
+        modal.style.display = "block"; 
+        return;
+    }
+
+    cart.push({ name: productName, price: parseFloat(price) });
+    
+    showNotification(`¡${productName}`);
+    updateCartUI();
+}
+
+function updateCartUI() {
+    cartCountElement.innerText = cart.length;
+    
+    const cartStatus = document.querySelector(".cart-status");
+    cartStatus.innerText = cart.length > 0 ? `${cart.length} ARTÍCULO(S)` : "CARRO VACÍO";
+
+    cartItemsList.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+        cartItemsList.innerHTML = '<p style="color: #666; margin: 20px 0;">Tu carro está esperando ser llenado...</p>';
+    } else {
+        cart.forEach((item, index) => {
+            total += item.price;
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "cart-item fade-in";
+            itemDiv.innerHTML = `
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <span>${item.price.toFixed(2)} USD</span>
+                </div>
+                <i class="fas fa-trash-alt remove-item" onclick="removeFromCart(${index})"></i>
+            `;
+            cartItemsList.appendChild(itemDiv);
+        });
+    }
+
+    cartTotalPrice.innerText = `${total.toFixed(2)} USD`;
+}
+
+window.removeFromCart = function(index) {
+    cart.splice(index, 1);
+    updateCartUI();
+};
+
+function renderProducts(category) {
+    productsContainer.innerHTML = "";
+    const products = productsData[category] || [];
+    
+    products.forEach(p => {
+        const card = document.createElement("div");
+        card.className = `product-card ${p.type} fade-in`; 
+        card.innerHTML = `
+            <div class="card-tag">${p.tag}</div>
+            <div class="card-body">
+                <h3>${p.name}</h3>
+                <p class="price">${p.price} <span>USD</span></p>
+            </div>
+            <button class="buy-btn" onclick="addToCart('${p.name}', '${p.price}')">${p.btn}</button>
+        `;
+        productsContainer.appendChild(card);
+    });
+}
