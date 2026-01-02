@@ -98,3 +98,62 @@ navItems.forEach(item => {
         console.log("Cambiando a categoría: " + item.innerText.trim());
     };
 });
+
+const productsData = {
+    divinos: [
+        { name: "ZEUS", price: "25.00", tag: "PERMANENTE", type: "god", btn: "COMPRAR PODER" },
+        { name: "APOLO", price: "15.00", tag: "MENSUAL", type: "god", btn: "HEREDAR LUZ" }
+    ],
+    titanes: [
+        { name: "CRONOS", price: "25.00", tag: "PERMANENTE", type: "titan", btn: "DESATAR CAOS" },
+        { name: "ATLAS", price: "12.00", tag: "MENSUAL", type: "titan", btn: "CARGAR MUNDO" }
+    ],
+    llaves: [
+        { name: "KEY OLIMPO", price: "5.00", tag: "X5 LLAVES", type: "god", btn: "PROBAR SUERTE" }
+    ]
+};
+
+const productsContainer = document.getElementById("productsContainer");
+
+function renderProducts(category) {
+    productsContainer.innerHTML = "";
+    
+    const products = productsData[category] || [];
+    
+    products.forEach(p => {
+        const card = document.createElement("div");
+        card.className = `product-card ${p.type} fade-in`; 
+        card.innerHTML = `
+            <div class="card-tag">${p.tag}</div>
+            <div class="card-body">
+                <h3>${p.name}</h3>
+                <p class="price">${p.price} <span>EUR</span></p>
+            </div>
+            <button class="buy-btn">${p.btn}</button>
+        `;
+        productsContainer.appendChild(card);
+    });
+
+    attachBuyEvents();
+}
+
+navItems.forEach(item => {
+    item.onclick = (e) => {
+        e.preventDefault();
+        const category = item.getAttribute("data-category");
+        
+        navItems.forEach(nav => nav.classList.remove("active"));
+        item.classList.add("active");
+        
+        renderProducts(category);
+    };
+});
+
+function attachBuyEvents() {
+    const newBtns = document.querySelectorAll(".buy-btn");
+    newBtns.forEach(btn => {
+        btn.onclick = () => modal.style.display = "block";
+    });
+}
+
+renderProducts("divinos");
