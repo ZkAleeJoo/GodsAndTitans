@@ -20,7 +20,7 @@
 
             <div class="top-right">
                 <div class="user-status">
-                    <span class="guest-text">Invitado</span>
+                    <span class="guest-text" id="userDisplayName">Invitado</span>
                     <a href="#" class="login-link">CLICK PARA INICIAR SESIÓN</a>
                 </div>
                 <div class="cart-info">
@@ -93,8 +93,8 @@
 
             <div class="monthly-goal">
                 <div class="goal-info">
-                    <span style="font-weight: 900; color: #888;">META MENSUAL</span>
-                    <span style="font-weight: 900; color: var(--gold);">15%</span>
+                    <span>META MENSUAL DE DONACIONES</span>
+                    <span class="goal-percent">15%</span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress" style="width: 15%;"></div>
@@ -128,7 +128,7 @@
             <span class="close-modal" id="closeCart">&times;</span>
             <h2>TU CARRITO DIVINO</h2>
             <div id="cartItemsList" class="cart-items-container">
-                <p style="color: #666; margin: 20px 0;">Tu carro está esperando ser llenado...</p>
+                <p style="color: #666; margin: 20px 0;">Tu carro está vacío...</p>
             </div>
             <div class="cart-footer">
                 <div class="cart-total">
@@ -162,7 +162,7 @@
         <div class="modal-content success-glow" style="border: none; background: transparent;">
             <div class="success-icon"><i class="fas fa-fire-alt"></i></div>
             <h1 class="epic-title">¡PEDIDO CONFIRMADO!</h1>
-            <p id="successDetail"></p>
+            <p id="successDetail" style="font-size: 1.2rem; color: var(--gold); font-weight: 700;"></p>
             <button class="continue-btn" onclick="location.reload()" style="margin-top: 30px; width: 200px;">VOLVER AL INICIO</button>
         </div>
     </div>
@@ -172,7 +172,7 @@
             <i class="fas fa-check-circle"></i>
             <div class="toast-text">
                 <span id="toastTitle">MENSAJE</span>
-                <p id="toastMessage">Contenido...</p>
+                <p id="toastMessage"></p>
             </div>
         </div>
     </div>
