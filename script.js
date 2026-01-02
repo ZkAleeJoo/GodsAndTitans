@@ -103,41 +103,37 @@ function copyIP() {
    CARRITO Y PRODUCTOS DINÁMICOS
    ========================================= */
 const productsData = {
-    divinos: [
-        { name: "ZEUS", price: "25.00", tag: "PERMANENTE", type: "god", btn: "COMPRAR PODER" },
-        { name: "APOLO", price: "15.00", tag: "MENSUAL", type: "god", btn: "HEREDAR LUZ" }
+    permanentes: [
+        { name: "URANO", price: "50.00", tag: "PRIMORDIAL", icon: "fa-cloud-moon", color: "#6a0dad", btn: "COMPRAR" },
+        { name: "ZEUS", price: "40.00", tag: "REY DEL OLIMPO", icon: "fa-bolt-lightning", color: "#00d2ff", btn: "COMPRAR" },
+        { name: "GEA", price: "30.00", tag: "MADRE TIERRA", icon: "fa-leaf", color: "#2ecc71", btn: "COMPRAR" },
+        { name: "ARES", price: "20.00", tag: "DIOS DE GUERRA", icon: "fa-skull-crossbones", color: "#e74c3c", btn: "COMPRAR" },
+        { name: "CRONOS", price: "10.00", tag: "TITÁN DEL TIEMPO", icon: "fa-hourglass-half", color: "#ff4500", btn: "COMPRAR" },
+        { name: "APOLO", price: "5.00", tag: "LUZ DEL SOL", icon: "fa-sun", color: "#ffd700", btn: "COMPRAR" }
     ],
-    titanes: [
-        { name: "CRONOS", price: "25.00", tag: "PERMANENTE", type: "titan", btn: "DESATAR CAOS" },
-        { name: "ATLAS", price: "12.00", tag: "MENSUAL", type: "titan", btn: "CARGAR MUNDO" }
-    ],
-    llaves: [
-        { name: "KEY OLIMPO", price: "5.00", tag: "X5 LLAVES", type: "god", btn: "PROBAR SUERTE" }
-    ],
-    desbaneos: [
-        { name: "UNBAN", price: "10.00", tag: "ÚNICO", type: "titan", btn: "PEDIR PERDÓN" }
-    ],
-    extras: [
-        { name: "COSMÉTICOS", price: "7.00", tag: "PACK", type: "god", btn: "VER MÁS" }
-    ]
+    llaves: [{ name: "KEY OLIMPO", price: "5.00", tag: "X5 LLAVES", icon: "fa-key", color: "#ffd700", btn: "COMPRAR" }],
+    desbaneos: [{ name: "UNBAN", price: "10.00", tag: "ÚNICO", icon: "fa-gavel", color: "#ff4500", btn: "COMPRAR" }],
+    extras: [{ name: "COSMÉTICOS", price: "7.00", tag: "PACK", icon: "fa-wand-magic-sparkles", color: "#00d2ff", btn: "COMPRAR" }]
 };
 
 function renderProducts(category) {
     const container = document.getElementById("productsContainer");
     if (!container) return;
-    
     container.innerHTML = "";
     
     (productsData[category] || []).forEach(p => {
         const card = document.createElement("div");
-        card.className = `product-card ${p.type} fade-in`; 
+        card.className = `product-card fade-in`; 
+        card.style.setProperty('--rank-color', p.color);
+        
         card.innerHTML = `
-            <div class="card-tag">${p.tag}</div>
+            <div class="card-tag" style="background: ${p.color}">${p.tag}</div>
             <div class="card-body">
+                <div class="rank-logo"><i class="fas ${p.icon}" style="color: ${p.color}"></i></div>
                 <h3>${p.name}</h3>
                 <p class="price">${p.price} <span>USD</span></p>
             </div>
-            <button class="buy-btn" onclick="addToCart('${p.name}', '${p.price}')">${p.btn}</button>
+            <button class="buy-btn" style="background: ${p.color}" onclick="addToCart('${p.name}', '${p.price}')">${p.btn}</button>
         `;
         container.appendChild(card);
     });

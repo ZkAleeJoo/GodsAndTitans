@@ -3,214 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gods & Titans Craft | Tienda Oficial</title>
-    
-    <link rel="icon" href="logo.png" type="image/png">
+    <title>Gods & Titans Craft | Inicio</title>
     <link rel="stylesheet" href="style.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <div class="top-left">
-                <div class="user-status">
-                    <span class="guest-text" id="userDisplayName">Invitado</span>
-                    <a href="#" class="login-link">CLICK PARA INICIAR SESIÓN</a>
-                </div>
-            </div>
-
-            <div class="top-right">
-                <div class="cart-info">
-                    <div class="cart-text-container">
-                        <span class="cart-title">Carro de Visitante</span>
-                        <span class="cart-status">CARRO VACÍO</span>
-                    </div>
-                    <div class="cart-icon-container">
-                        <img src="https://mc-heads.net/avatar/385" alt="Avatar" class="mini-head">
-                        <span class="cart-count">0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <header class="main-header">
-        <div class="overlay"></div>
-        <div class="header-content">
-            <div class="header-flex-container">
-                <div class="ip-copy-box" onclick="copyIP()" title="Haz clic para copiar">
-                    <div class="ip-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <div class="ip-details">
-                        <span class="ip-title">ÚNETE AL PANTEÓN</span>
-                        <span class="ip-address" id="serverIP">PLAY.GODSANDTITANS.NET</span>
-                    </div>
-                    <div class="ip-status-indicator">
-                        <span class="online-dot"></span>
-                        <span id="playerCount">452</span>
-                    </div>
-                </div>
-
-                <div class="logo-wrapper">
-                    <img src="logo.png" alt="Gods & Titans Logo" class="main-logo">
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container main-layout">
-        <aside class="sidebar">
-            <h3 class="category-title">SELECCIONA UNA CATEGORÍA</h3>
-            <nav class="nav-menu">
-                <a href="#" class="nav-item active" data-category="divinos">
-                    <i class="fas fa-crown"></i> RANGOS DIVINOS
-                </a>
-                <a href="#" class="nav-item" data-category="titanes">
-                    <i class="fas fa-fire-alt"></i> RANGOS TITANES
-                </a>
-                <a href="#" class="nav-item" data-category="llaves">
-                    <i class="fas fa-box-open"></i> LLAVES Y CAJAS
-                </a>
-                <a href="#" class="nav-item" data-category="desbaneos">
-                    <i class="fas fa-gavel"></i> DESBANEOS
-                </a>
-                <a href="#" class="nav-item" data-category="extras">
-                    <i class="fas fa-plus-circle"></i> EXTRAS
-                </a>
-            </nav>
-
-            <div class="recent-purchases">
-                <h4 class="mini-title">ACTIVIDAD RECIENTE</h4>
-                <div class="purchase-item">
-                    <img src="https://mc-heads.net/avatar/Notch/24" alt="Avatar">
-                    <span><strong>Notch</strong> adquirió <b class="gold-text">ZEUS</b></span>
-                </div>
-            </div>
-
-        </aside>
-
-        <section class="content-area">
-            <div class="section-header">
-                <h2>ARTÍCULOS DISPONIBLES</h2>
-            </div>
-            
-            <div class="products-grid" id="productsContainer"></div>
-
-            <div class="monthly-goal">
-                <div class="goal-info">
-                    <span>META MENSUAL DE DONACIONES</span>
-                    <span class="goal-percent">15%</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 15%;"></div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="userModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            
-            <div style="color: var(--god-color); font-size: 2.5rem; margin-bottom: 15px;">
-                <i class="fas fa-bolt"></i>
-            </div>
-
-            <h2 style="color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.2);">BIENVENIDO, GUERRERO</h2>
-            <p style="color: var(--text-muted); margin-bottom: 30px;">Ingresa tu nombre para reclamar tu lugar en el Olimpo</p>
-            
-            <div class="input-group">
-                <img src="https://mc-heads.net/avatar/385/50" id="userHead" alt="Avatar Preview">
-                <input type="text" id="mcUsername" placeholder="Tu nombre en el juego..." autocomplete="off">
-            </div>
-
-            <div class="bedrock-toggle">
-                <i class="fas fa-mobile-alt" style="color: var(--titan-color);"></i>
-                <span>¿Juegas en Bedrock?</span>
-                <label class="switch">
-                    <input type="checkbox" id="bedrockCheck">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-
-            <button class="checkout-epic-btn" id="btnContinue" style="margin-top: 10px;">
-                CONFIRMAR IDENTIDAD <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+<body class="landing-body">
+    <div class="intro-container">
+        <img src="logo.png" alt="Logo" class="intro-logo fade-in">
+        <h1 class="intro-title">BIENVENIDO AL OLIMPO</h1>
+        <p class="intro-subtitle">Elige tu camino entre Dioses y Titanes</p>
+        
+        <div class="intro-buttons">
+            <a href="tienda.html" class="btn-main shop-btn">
+                <i class="fas fa-shopping-cart"></i> ENTRAR A LA TIENDA
+            </a>
+            <button class="btn-main ip-btn" onclick="copyIP()">
+                <i class="fas fa-server"></i> PLAY.GODSANDTITANS.NET
             </button>
         </div>
     </div>
-
-    <div id="cartModal" class="modal">
-        <div class="modal-content" style="width: 500px;">
-            <span class="close-modal" id="closeCart">&times;</span>
-            <h2>TU CARRITO DIVINO</h2>
-            <div id="cartItemsList" class="cart-items-container">
-                <p style="color: #666; margin: 20px 0;">Tu carro está vacío...</p>
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>TOTAL A PAGAR:</span>
-                    <span id="cartTotalPrice">0.00 USD</span>
-                </div>
-                <button class="checkout-epic-btn" id="btnCheckout" style="background: var(--gold); color: black;">PROCEDER AL PAGO</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="paymentModal" class="modal">
-        <div class="modal-content" style="width: 450px;">
-            <span class="close-modal" id="closePayment">&times;</span>
-            <h2>MÉTODO DE PAGO</h2>
-            <div class="payment-methods">
-                <div class="method-card" onclick="processFinalPayment('PayPal')">
-                    <i class="fab fa-paypal"></i> <span>PayPal</span>
-                </div>
-                <div class="method-card" onclick="processFinalPayment('Tarjeta')">
-                    <i class="fas fa-credit-card"></i> <span>Crédito / Débito</span>
-                </div>
-                <div class="method-card" onclick="processFinalPayment('Crypto')">
-                    <i class="fab fa-bitcoin"></i> <span>Criptomonedas</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="successModal" class="modal" style="background: rgba(0,0,0,0.95);">
-        <div class="modal-content success-glow" style="border: none; background: transparent;">
-            <div class="success-icon"><i class="fas fa-fire-alt"></i></div>
-            <h1 class="epic-title">¡PEDIDO CONFIRMADO!</h1>
-            <p id="successDetail" style="font-size: 1.2rem; color: var(--gold); font-weight: 700;"></p>
-            <button class="checkout-epic-btn" onclick="location.reload()" style="margin-top: 30px; width: 200px;">VOLVER AL INICIO</button>
-        </div>
-    </div>
-
-    <div id="customToast" class="toast-container">
-        <div class="toast-content">
-            <i class="fas fa-check-circle"></i>
-            <div class="toast-text">
-                <span id="toastTitle">MENSAJE</span>
-                <p id="toastMessage"></p>
-            </div>
-        </div>
-    </div>
-
-
-    <!--FOOTER PIE DE PÁGINA-->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <p>Gods & Titans Craft — © 2024 Todos los derechos reservados.</p>
-            <p class="mojang-disclaimer">No estamos afiliados con Mojang AB.</p>
-            <div class="footer-links">
-                <a href="#">Términos</a>
-                <a href="#">Privacidad</a>
-                <a href="#">Discord</a>
-            </div>
-        </div>
-    </footer>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
