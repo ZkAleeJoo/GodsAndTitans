@@ -3,29 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gods & Titans Craft | Official Store</title>
+    <title>Gods & Titans Craft | Tienda Oficial</title>
+    <link rel="icon" href="logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script> 
 </head>
 <body>
 
-    <!-- HEATER -->
     <header class="main-header">
         <div class="overlay"></div>
         <div class="header-content">
             <div class="server-status">
-                <div class="status-item">
-                    <span class="count">32</span>
-                    <span class="label">GODS.CRAFT.ES <br> <b>CLICK PARA COPIAR</b></span>
-                </div>
-
                 <img src="logo.png" alt="Gods & Titans Logo" class="main-logo">
-
-                <div class="status-item">
-                    <span class="count">1,073</span>
-                    <span class="label">SERVIDOR DE DISCORD <br> <b>CLICK PARA UNIRSE</b></span>
-                </div>
             </div>
         </div>
     </header>
@@ -78,29 +67,21 @@
         </section>
     </div>
 
-    <!--MANEJO DE MODALS-->
     <div id="userModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>IDENTIFÍCATE, GUERRERO</h2>
-            <p>Introduce tu nombre de usuario de Minecraft para continuar.</p>
+            <p>Introduce tu nombre de usuario de Minecraft.</p>
             
             <div class="input-group">
                 <img src="https://mc-heads.net/avatar/steve/50" id="userHead" alt="Head">
                 <input type="text" id="mcUsername" placeholder="Tu nombre en el juego..." autocomplete="off">
             </div>
 
-            <div class="bedrock-toggle">
-                <span>¿Eres usuario de Bedrock?</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-
             <button class="continue-btn">CONTINUAR AL PAGO</button>
         </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
