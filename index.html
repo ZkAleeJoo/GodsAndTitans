@@ -113,11 +113,30 @@
         </div>
     </div>
 
+    <!--MODAL PARA EL CARRITO DE COMPRAS-->
+    <div id="cartModal" class="modal">
+        <div class="modal-content" style="width: 500px;">
+            <span class="close-modal" id="closeCart">&times;</span>
+            <h2>TU CARRITO DIVINO</h2>
+            <div id="cartItemsList" class="cart-items-container">
+                <p style="color: #666; margin: 20px 0;">Tu carro está esperando ser llenado...</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>TOTAL A PAGAR:</span>
+                    <span id="cartTotalPrice">0.00 USD</span>
+                </div>
+                <button class="continue-btn" id="btnCheckout" style="background: var(--gold); color: black;">PROCEDER AL PAGO</button>
+            </div>
+        </div>
+    </div>
+
+    <!--TOAST DE CONFIRMACIÓN-->
     <div id="customToast" class="toast-container">
         <div class="toast-content">
             <i class="fas fa-check-circle"></i>
             <div class="toast-text">
-                <span id="toastTitle">¡SISTEMA ACTUALIZADO!</span>
+                <span id="toastTitle">MENSAJE DE ALERTA</span>
                 <p id="toastMessage">Mensaje de confirmación aquí...</p>
             </div>
         </div>
