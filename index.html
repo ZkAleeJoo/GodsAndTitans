@@ -4,29 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gods & Titans Craft | Tienda Oficial</title>
+    
     <link rel="icon" href="logo.png" type="image/png">
+    
     <link rel="stylesheet" href="style.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-left">
+                <a href="#" class="btn-sanciones">SANCIONES</a>
+            </div>
+            <div class="top-right">
+                <div class="user-status">
+                    <span class="guest-text">Invitado</span>
+                    <a href="#" class="login-link">CLICK PARA INICIAR SESIÓN</a>
+                </div>
+                <div class="cart-info">
+                    <div class="cart-text-container">
+                        <span class="cart-title">Carro de Visitante</span>
+                        <span class="cart-status">CARRO VACÍO</span>
+                    </div>
+                    <div class="cart-icon-container">
+                        <img src="https://mc-heads.net/avatar/steve/32" alt="Avatar" class="mini-head">
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header class="main-header">
         <div class="overlay"></div>
         <div class="header-content">
-            <div class="server-status">
+            <div class="logo-wrapper">
                 <img src="logo.png" alt="Gods & Titans Logo" class="main-logo">
             </div>
         </div>
     </header>
 
     <div class="container main-layout">
+        
         <aside class="sidebar">
-            <h3 class="category-title">SELECCIONA CATEGORÍA</h3>
+            <h3 class="category-title">SELECCIONA UNA CATEGORÍA</h3>
             <nav class="nav-menu">
-                <a href="#" class="nav-item active">RANGOS DIVINOS</a>
-                <a href="#" class="nav-item">RANGOS TITANES</a>
-                <a href="#" class="nav-item">LLAVES Y CAJAS</a>
-                <a href="#" class="nav-item">DESBANEOS</a>
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-crown"></i> RANGOS DIVINOS
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-fire-alt"></i> RANGOS TITANES
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-box-open"></i> LLAVES Y CAJAS
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-gavel"></i> DESBANEOS
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-plus-circle"></i> EXTRAS
+                </a>
             </nav>
         </aside>
 
@@ -71,14 +111,22 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>IDENTIFÍCATE, GUERRERO</h2>
-            <p>Introduce tu nombre de usuario de Minecraft.</p>
+            <p>Introduce tu nombre de usuario de Minecraft para continuar.</p>
             
             <div class="input-group">
-                <img src="https://mc-heads.net/avatar/steve/50" id="userHead" alt="Head">
+                <img src="https://mc-heads.net/avatar/steve/50" id="userHead" alt="Avatar Preview">
                 <input type="text" id="mcUsername" placeholder="Tu nombre en el juego..." autocomplete="off">
             </div>
 
-            <button class="continue-btn">CONTINUAR AL PAGO</button>
+            <div class="bedrock-toggle">
+                <span>¿Eres usuario de Bedrock?</span>
+                <label class="switch">
+                    <input type="checkbox" id="bedrockCheck">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <button class="continue-btn" id="btnContinue">CONTINUAR</button>
         </div>
     </div>
 
