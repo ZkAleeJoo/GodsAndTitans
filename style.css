@@ -486,3 +486,13 @@ body {
     transform: scale(1.1);
     transition: 0.3s;
 }
+
+/* EFECTO DE LOGEO */
+.guest-text {
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.guest-text:not(:contains("Invitado")) {
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
+    font-size: 0.95rem;
+}
