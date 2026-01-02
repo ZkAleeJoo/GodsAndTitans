@@ -448,3 +448,55 @@ body {
         gap: 30px;
     }
 }
+
+/* --- ESTILO DEL USUARIO LOGUEADO (Corregido) --- */
+.guest-text.logged-in {
+    color: var(--god-color) !important;
+    text-shadow: 0 0 12px rgba(0, 210, 255, 0.6);
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+/* --- CORRECCIÓN META MENSUAL --- */
+.content-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.monthly-goal {
+    margin-top: 40px;
+    background: #111; 
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    display: block !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.progress-bar {
+    height: 14px;
+    background: #000;
+    border-radius: 20px;
+    margin-top: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--titan-color), var(--god-color));
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+/* --- ALINEACIÓN DEL HEADER --- */
+.header-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}

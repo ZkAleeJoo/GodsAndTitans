@@ -32,11 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setLoggedUser(username) {
-    document.querySelector(".guest-text").innerText = username;
+    const guestText = document.querySelector(".guest-text");
+    guestText.innerText = username;
+    guestText.classList.add("logged-in"); 
+    
     document.querySelector(".mini-head").src = `https://mc-heads.net/avatar/${username}/32`;
     document.querySelector(".cart-title").innerText = `Carro de ${username}`;
     document.querySelector(".login-link").innerText = "CAMBIAR DE PERSONAJE";
-    document.querySelector(".guest-text").style.color = "var(--god-color)";
 }
 
 /* =========================================
