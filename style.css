@@ -1,0 +1,45 @@
+:root {
+    --bg-dark: #0f0f0f;
+    --god-cyan: #00d2ff;
+    --titan-orange: #ff4500;
+    --gold: #ffd700;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('tu-fondo-minecraft.jpg');
+    background-size: cover;
+}
+
+.main-logo {
+    width: 200px;
+    filter: drop-shadow(0 0 15px var(--god-cyan));
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    border-left: 5px solid var(--god-cyan);
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--god-cyan);
+}
