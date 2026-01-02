@@ -1,10 +1,10 @@
-/* VARIABLES GLOBALES - TEMÁTICA DIOSES Y TITANES */
+/* VARIABLES GLOBALES */
 :root {
     --dark-bg: #121212;
     --card-bg: #1a1a1a;
-    --god-color: #00d2ff;     /* Cian Divino */
-    --titan-color: #ff4500;   /* Naranja Titán */
-    --gold: #ffd700;          /* Oro Sagrado */
+    --god-color: #00d2ff;
+    --titan-color: #ff4500;
+    --gold: #ffd700;
     --text-muted: #888;
 }
 
@@ -16,10 +16,10 @@ body {
     overflow-x: hidden;
 }
 
-/* --- BARRA SUPERIOR (TOP BAR) --- */
+/* --- BARRA SUPERIOR CORREGIDA --- */
 .top-bar {
-    background: rgba(0, 0, 0, 0.5);
-    height: 70px;
+    background: rgba(0, 0, 0, 0.7); /* Un poco más oscuro para mejor lectura */
+    height: 80px; /* Aumentado ligeramente para evitar que se vea apretado */
     position: absolute;
     top: 0;
     width: 100%;
@@ -33,42 +33,34 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px; /* Más margen lateral para evitar que toque el borde */
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Empuja todo a la derecha */
     align-items: center;
 }
 
-.btn-sanciones {
-    background: rgba(255, 255, 255, 0.1);
-    color: #bbb;
-    padding: 8px 18px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-.btn-sanciones:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Espacio entre el login y el carrito */
 }
 
 .user-status {
     text-align: right;
-    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .guest-text {
-    display: block;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    color: #eee;
+    color: #fff;
+    line-height: 1.2;
 }
 
 .login-link {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     color: var(--gold);
     text-decoration: none;
     font-weight: 900;
@@ -78,11 +70,17 @@ body {
 .cart-info {
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 5px 15px;
-    border-radius: 10px;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 15px;
+    border-radius: 12px;
     cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.cart-info:hover {
+    background: rgba(255, 255, 255, 0.07);
 }
 
 .cart-text-container {
@@ -91,39 +89,45 @@ body {
 
 .cart-title {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
+    color: #ccc;
 }
 
 .cart-status {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     color: var(--gold);
     font-weight: 900;
+    text-transform: uppercase;
+}
+
+.mini-head {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #444;
 }
 
 .cart-icon-container {
     position: relative;
-}
-
-.mini-head {
-    width: 32px;
-    border-radius: 4px;
-    border: 1px solid #333;
+    display: flex;
+    align-items: center;
 }
 
 .cart-count {
     position: absolute;
-    top: -8px;
-    right: -8px;
+    top: -10px;
+    right: -10px;
     background: var(--titan-color);
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     padding: 2px 6px;
     border-radius: 50%;
     font-weight: 900;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-/* --- HEADER Y ANIMACIÓN DEL LOGO --- */
+/* --- LOGO Y HEADER (Mantenido igual pero con el blur solicitado anteriormente) --- */
 .main-header {
     height: 500px;
     position: relative;
@@ -133,7 +137,6 @@ body {
     overflow: hidden;
 }
 
-/* Fondo Borroso Profesional */
 .main-header::before {
     content: "";
     position: absolute;
@@ -150,7 +153,6 @@ body {
     z-index: 2;
 }
 
-/* Animación Respiración (Breathing) */
 @keyframes breathing {
     0% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.3)); }
     50% { transform: scale(1.06); filter: drop-shadow(0 0 40px rgba(0, 210, 255, 0.6)); }
@@ -163,15 +165,9 @@ body {
     z-index: 3;
     animation: breathing 4s ease-in-out infinite;
     transition: 0.4s ease;
-    cursor: pointer;
 }
 
-.main-logo:hover {
-    animation-play-state: paused;
-    transform: scale(1.1);
-}
-
-/* --- DISEÑO DE LA TIENDA (LAYOUT) --- */
+/* --- RESTO DEL DISEÑO (Sidebars, Cards, Modals) --- */
 .main-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -183,7 +179,6 @@ body {
     z-index: 10;
 }
 
-/* Sidebar */
 .sidebar {
     background: #161616;
     padding: 25px;
@@ -233,7 +228,6 @@ body {
     background: #1f1f1f;
     color: white;
     border-left: 4px solid var(--god-color);
-    border-right: 1px solid var(--god-color);
 }
 
 .nav-item.active i {
@@ -243,10 +237,8 @@ body {
 .nav-item:hover {
     background: #222;
     transform: translateX(8px);
-    border-color: #333;
 }
 
-/* Productos */
 .section-header h2 {
     font-size: 1.2rem;
     margin-bottom: 30px;
@@ -269,10 +261,6 @@ body {
     transition: 0.3s;
 }
 
-.product-card:hover {
-    transform: translateY(-8px);
-}
-
 .product-card.god:hover { border-color: var(--god-color); box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1); }
 .product-card.titan:hover { border-color: var(--titan-color); box-shadow: 0 10px 30px rgba(255, 69, 0, 0.1); }
 
@@ -293,7 +281,6 @@ body {
 
 .card-body h3 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
 }
 
 .price {
@@ -312,17 +299,11 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     border-top: 3px solid #333;
-    transition: 0.3s;
 }
 
 .god .buy-btn { border-top-color: var(--god-color); }
 .titan .buy-btn { border-top-color: var(--titan-color); }
 
-.buy-btn:hover {
-    background: #282828;
-}
-
-/* Meta Mensual */
 .monthly-goal {
     margin-top: 50px;
     background: #161616;
@@ -335,7 +316,6 @@ body {
     justify-content: space-between;
     font-size: 0.8rem;
     font-weight: 900;
-    margin-bottom: 15px;
 }
 
 .progress-bar {
@@ -343,6 +323,7 @@ body {
     background: #222;
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 10px;
 }
 
 .progress {
@@ -351,7 +332,6 @@ body {
     border-radius: 10px;
 }
 
-/* --- MODAL --- */
 .modal {
     display: none;
     position: fixed;
