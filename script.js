@@ -39,7 +39,7 @@ userInput.oninput = function() {
     if (username.length > 2) {
         userHead.src = `https://mc-heads.net/avatar/${username}/50`;
     } else {
-        userHead.src = `https://mc-heads.net/avatar/steve/50`;
+        userHead.src = `https://mc-heads.net/avatar/385/50`;
     }
 };
 
