@@ -1,4 +1,3 @@
-// SELECCIÓN DE ELEMENTOS DEL DOM
 const modal = document.getElementById("userModal");
 const btns = document.querySelectorAll(".buy-btn");
 const span = document.querySelector(".close-modal");
