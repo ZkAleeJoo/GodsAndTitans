@@ -49,19 +49,19 @@
         <aside class="sidebar">
             <h3 class="category-title">SELECCIONA UNA CATEGORÍA</h3>
             <nav class="nav-menu">
-                <a href="#" class="nav-item active">
+                <a href="#" class="nav-item active" data-category="divinos">
                     <i class="fas fa-crown"></i> RANGOS DIVINOS
                 </a>
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item" data-category="titanes">
                     <i class="fas fa-fire-alt"></i> RANGOS TITANES
                 </a>
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item" data-category="llaves">
                     <i class="fas fa-box-open"></i> LLAVES Y CAJAS
                 </a>
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item" data-category="desbaneos">
                     <i class="fas fa-gavel"></i> DESBANEOS
                 </a>
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item" data-category="extras">
                     <i class="fas fa-plus-circle"></i> EXTRAS
                 </a>
             </nav>
@@ -69,28 +69,11 @@
 
         <section class="content-area">
             <div class="section-header">
-                <h2>ARTÍCULOS MÁS COMPRADOS</h2>
+                <h2>ARTÍCULOS DISPONIBLES</h2>
             </div>
             
-            <div class="products-grid">
-                <div class="product-card god">
-                    <div class="card-tag">PERMANENTE</div>
-                    <div class="card-body">
-                        <h3>ZEUS</h3>
-                        <p class="price">25.00 <span>EUR</span></p>
-                    </div>
-                    <button class="buy-btn">COMPRAR PODER</button>
+            <div class="products-grid" id="productsContainer">
                 </div>
-
-                <div class="product-card titan">
-                    <div class="card-tag">PERMANENTE</div>
-                    <div class="card-body">
-                        <h3>CRONOS</h3>
-                        <p class="price">25.00 <span>EUR</span></p>
-                    </div>
-                    <button class="buy-btn">DESATAR CAOS</button>
-                </div>
-            </div>
 
             <div class="monthly-goal">
                 <div class="goal-info">
@@ -131,8 +114,8 @@
         <div class="toast-content">
             <i class="fas fa-check-circle"></i>
             <div class="toast-text">
-                <span id="toastTitle">¡ÉXITO!</span>
-                <p id="toastMessage">Mensaje aquí...</p>
+                <span id="toastTitle">¡SISTEMA ACTUALIZADO!</span>
+                <p id="toastMessage">Mensaje de confirmación aquí...</p>
             </div>
         </div>
     </div>
