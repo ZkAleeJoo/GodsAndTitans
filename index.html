@@ -14,12 +14,12 @@
 <body>
 
     <div class="top-bar">
-    <div class="top-bar-content">
-        <div class="top-left"></div> </div>
-    </div>
+        <div class="top-bar-content">
+            <div class="top-left">
+                </div>
 
-    <div class="top-right">
-        <div class="user-status">
+            <div class="top-right">
+                <div class="user-status">
                     <span class="guest-text">Invitado</span>
                     <a href="#" class="login-link">CLICK PARA INICIAR SESIÓN</a>
                 </div>
@@ -37,30 +37,30 @@
         </div>
     </div>
 
-        <header class="main-header">
-            <div class="overlay"></div>
-            <div class="header-content">
-                <div class="header-flex-container">
-                    <div class="ip-copy-box" onclick="copyIP()" title="Haz clic para copiar">
-                        <div class="ip-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <div class="ip-details">
-                            <span class="ip-title">ÚNETE AL PANTEÓN</span>
-                            <span class="ip-address" id="serverIP">PLAY.GODSANDTITANS.NET</span>
-                        </div>
-                        <div class="ip-status-indicator">
-                            <span class="online-dot"></span>
-                            <span id="playerCount">452</span>
-                        </div>
+    <header class="main-header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <div class="header-flex-container">
+                <div class="ip-copy-box" onclick="copyIP()" title="Haz clic para copiar">
+                    <div class="ip-icon">
+                        <i class="fas fa-server"></i>
                     </div>
-
-                    <div class="logo-wrapper">
-                        <img src="logo.png" alt="Gods & Titans Logo" class="main-logo">
+                    <div class="ip-details">
+                        <span class="ip-title">ÚNETE AL PANTEÓN</span>
+                        <span class="ip-address" id="serverIP">PLAY.GODSANDTITANS.NET</span>
+                    </div>
+                    <div class="ip-status-indicator">
+                        <span class="online-dot"></span>
+                        <span id="playerCount">452</span>
                     </div>
                 </div>
+
+                <div class="logo-wrapper">
+                    <img src="logo.png" alt="Gods & Titans Logo" class="main-logo">
+                </div>
             </div>
-        </header>
+        </div>
+    </header>
 
     <div class="container main-layout">
         <aside class="sidebar">
@@ -109,12 +109,10 @@
             <span class="close-modal">&times;</span>
             <h2>IDENTIFÍCATE, GUERRERO</h2>
             <p>Introduce tu nombre de usuario de Minecraft para continuar.</p>
-            
             <div class="input-group">
                 <img src="https://mc-heads.net/avatar/385/50" id="userHead" alt="Avatar Preview">
                 <input type="text" id="mcUsername" placeholder="Tu nombre en el juego..." autocomplete="off">
             </div>
-
             <div class="bedrock-toggle">
                 <span>¿Eres usuario de Bedrock?</span>
                 <label class="switch">
@@ -122,7 +120,6 @@
                     <span class="slider round"></span>
                 </label>
             </div>
-
             <button class="continue-btn" id="btnContinue">CONTINUAR</button>
         </div>
     </div>
@@ -148,19 +145,15 @@
         <div class="modal-content" style="width: 450px;">
             <span class="close-modal" id="closePayment">&times;</span>
             <h2>MÉTODO DE PAGO</h2>
-            <p>Selecciona cómo deseas ofrendar a los Dioses:</p>
             <div class="payment-methods">
                 <div class="method-card" onclick="processFinalPayment('PayPal')">
-                    <i class="fab fa-paypal"></i>
-                    <span>PayPal</span>
+                    <i class="fab fa-paypal"></i> <span>PayPal</span>
                 </div>
                 <div class="method-card" onclick="processFinalPayment('Tarjeta')">
-                    <i class="fas fa-credit-card"></i>
-                    <span>Crédito / Débito</span>
+                    <i class="fas fa-credit-card"></i> <span>Crédito / Débito</span>
                 </div>
                 <div class="method-card" onclick="processFinalPayment('Crypto')">
-                    <i class="fab fa-bitcoin"></i>
-                    <span>Criptomonedas</span>
+                    <i class="fab fa-bitcoin"></i> <span>Criptomonedas</span>
                 </div>
             </div>
         </div>
@@ -168,12 +161,9 @@
 
     <div id="successModal" class="modal" style="background: rgba(0,0,0,0.95);">
         <div class="modal-content success-glow" style="border: none; background: transparent;">
-            <div class="success-icon">
-                <i class="fas fa-fire-alt"></i>
-            </div>
+            <div class="success-icon"><i class="fas fa-fire-alt"></i></div>
             <h1 class="epic-title">¡PEDIDO CONFIRMADO!</h1>
-            <p id="successDetail" style="font-size: 1.2rem; color: var(--gold); font-weight: 700;"></p>
-            <p>Tus poderes están siendo procesados. Revisa tu correo o usa /donador en el servidor.</p>
+            <p id="successDetail"></p>
             <button class="continue-btn" onclick="location.reload()" style="margin-top: 30px; width: 200px;">VOLVER AL INICIO</button>
         </div>
     </div>
@@ -182,8 +172,8 @@
         <div class="toast-content">
             <i class="fas fa-check-circle"></i>
             <div class="toast-text">
-                <span id="toastTitle">MENSAJE DE ALERTA</span>
-                <p id="toastMessage">Mensaje de confirmación aquí...</p>
+                <span id="toastTitle">MENSAJE</span>
+                <p id="toastMessage">Contenido...</p>
             </div>
         </div>
     </div>
