@@ -55,12 +55,16 @@ document.querySelector(".login-link").onclick = (e) => {
     modal.style.display = "block";
 };
 
-// Actualiza la cabeza de skin en tiempo real al escribir
 userInput.oninput = function() {
     let username = this.value.trim();
-    userHead.src = username.length > 2 
-        ? `https://mc-heads.net/avatar/${username}/50` 
-        : `https://mc-heads.net/avatar/385/50`;
+    userHead.style.opacity = "0.5"; 
+    
+    setTimeout(() => {
+        userHead.src = username.length > 2 
+            ? `https://mc-heads.net/avatar/${username}/100` 
+            : `https://mc-heads.net/avatar/385/100`;
+        userHead.style.opacity = "1";
+    }, 200);
 };
 
 btnContinue.onclick = () => {
@@ -215,12 +219,12 @@ function showNotification(msg) {
     setTimeout(() => toast.classList.remove("active"), 4000);
 }
 
-// Cerrar modales al hacer clic fuera de ellos
 window.onclick = (e) => {
-    if (e.target.className === "modal") e.target.style.display = "none";
+    if (e.target.classList.contains("modal")) {
+        e.target.style.display = "none";
+    }
 };
 
-// Cerrar modales con el botón X
 document.querySelectorAll(".close-modal").forEach(span => {
     span.onclick = () => {
         span.closest(".modal").style.display = "none";

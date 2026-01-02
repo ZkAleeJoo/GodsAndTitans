@@ -16,13 +16,13 @@
     <div class="top-bar">
         <div class="top-bar-content">
             <div class="top-left">
-                </div>
-
-            <div class="top-right">
                 <div class="user-status">
                     <span class="guest-text" id="userDisplayName">Invitado</span>
                     <a href="#" class="login-link">CLICK PARA INICIAR SESIÓN</a>
                 </div>
+            </div>
+
+            <div class="top-right">
                 <div class="cart-info">
                     <div class="cart-text-container">
                         <span class="cart-title">Carro de Visitante</span>
@@ -82,6 +82,15 @@
                     <i class="fas fa-plus-circle"></i> EXTRAS
                 </a>
             </nav>
+
+            <div class="recent-purchases">
+                <h4 class="mini-title">ACTIVIDAD RECIENTE</h4>
+                <div class="purchase-item">
+                    <img src="https://mc-heads.net/avatar/Notch/24" alt="Avatar">
+                    <span><strong>Notch</strong> adquirió <b class="gold-text">ZEUS</b></span>
+                </div>
+            </div>
+
         </aside>
 
         <section class="content-area">
@@ -106,20 +115,31 @@
     <div id="userModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2>IDENTIFÍCATE, GUERRERO</h2>
-            <p>Introduce tu nombre de usuario de Minecraft para continuar.</p>
+            
+            <div style="color: var(--god-color); font-size: 2.5rem; margin-bottom: 15px;">
+                <i class="fas fa-bolt"></i>
+            </div>
+
+            <h2 style="color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.2);">BIENVENIDO, GUERRERO</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Ingresa tu nombre para reclamar tu lugar en el Olimpo</p>
+            
             <div class="input-group">
                 <img src="https://mc-heads.net/avatar/385/50" id="userHead" alt="Avatar Preview">
                 <input type="text" id="mcUsername" placeholder="Tu nombre en el juego..." autocomplete="off">
             </div>
+
             <div class="bedrock-toggle">
-                <span>¿Eres usuario de Bedrock?</span>
+                <i class="fas fa-mobile-alt" style="color: var(--titan-color);"></i>
+                <span>¿Juegas en Bedrock?</span>
                 <label class="switch">
                     <input type="checkbox" id="bedrockCheck">
                     <span class="slider round"></span>
                 </label>
             </div>
-            <button class="checkout-epic-btn" id="btnContinue">CONTINUAR</button>
+
+            <button class="checkout-epic-btn" id="btnContinue" style="margin-top: 10px;">
+                CONFIRMAR IDENTIDAD <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+            </button>
         </div>
     </div>
 
@@ -176,6 +196,20 @@
             </div>
         </div>
     </div>
+
+
+    <!--FOOTER PIE DE PÁGINA-->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>Gods & Titans Craft — © 2024 Todos los derechos reservados.</p>
+            <p class="mojang-disclaimer">No estamos afiliados con Mojang AB.</p>
+            <div class="footer-links">
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Discord</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
