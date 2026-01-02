@@ -16,10 +16,22 @@ body {
     overflow-x: hidden;
 }
 
-/* --- BARRA SUPERIOR CORREGIDA --- */
+/* --- ANIMACIONES DE ENTRADA --- */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- BARRA SUPERIOR CORREGIDA Y ANIMADA --- */
 .top-bar {
-    background: rgba(0, 0, 0, 0.7); /* Un poco más oscuro para mejor lectura */
-    height: 80px; /* Aumentado ligeramente para evitar que se vea apretado */
+    background: rgba(0, 0, 0, 0.7);
+    height: 80px;
     position: absolute;
     top: 0;
     width: 100%;
@@ -33,16 +45,16 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px; /* Más margen lateral para evitar que toque el borde */
+    padding: 0 30px;
     display: flex;
-    justify-content: flex-end; /* Empuja todo a la derecha */
+    justify-content: flex-end;
     align-items: center;
 }
 
 .top-right {
     display: flex;
     align-items: center;
-    gap: 25px; /* Espacio entre el login y el carrito */
+    gap: 25px;
 }
 
 .user-status {
@@ -50,6 +62,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Animación de entrada */
+    animation: fadeInDown 0.8s ease-out forwards;
 }
 
 .guest-text {
@@ -77,6 +91,9 @@ body {
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: 0.3s;
+    /* Animación de entrada con retraso */
+    opacity: 0;
+    animation: fadeInDown 0.8s ease-out forwards 0.2s;
 }
 
 .cart-info:hover {
@@ -127,7 +144,7 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-/* --- LOGO Y HEADER (Mantenido igual pero con el blur solicitado anteriormente) --- */
+/* --- LOGO Y HEADER --- */
 .main-header {
     height: 500px;
     position: relative;
@@ -167,7 +184,7 @@ body {
     transition: 0.4s ease;
 }
 
-/* --- RESTO DEL DISEÑO (Sidebars, Cards, Modals) --- */
+/* --- RESTO DEL DISEÑO --- */
 .main-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
