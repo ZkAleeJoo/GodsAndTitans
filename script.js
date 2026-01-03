@@ -111,7 +111,13 @@ const productsData = {
         { name: "CRONOS", price: "10.00", tag: "TITÁN DEL TIEMPO", icon: "fa-hourglass-half", color: "#ff4500", btn: "COMPRAR" },
         { name: "APOLO", price: "5.00", tag: "LUZ DEL SOL", icon: "fa-sun", color: "#ffd700", btn: "COMPRAR" }
     ],
-    llaves: [{ name: "KEY OLIMPO", price: "5.00", tag: "X5 LLAVES", icon: "fa-key", color: "#ffd700", btn: "COMPRAR" }],
+    llaves: [
+        { name: "LLAVE DEL CAOS", price: "5.00", tag: "LEGENDARIO", icon: "fa-eye", color: "#e74c3c", btn: "ADQUIRIR" },
+        { name: "LLAVE DEL CELESTIAL", price: "4.00", tag: "DIVINO", icon: "fa-spaghetti-monster-flying", color: "#3498db", btn: "ADQUIRIR" },
+        { name: "LLAVE DEL TITÁN", price: "3.00", tag: "PODEROSO", icon: "fa-hand-fist", color: "#e67e22", btn: "ADQUIRIR" },
+        { name: "LLAVE DEL TRONO", price: "2.00", tag: "NOBLE", icon: "fa-crown", color: "#f1c40f", btn: "ADQUIRIR" },
+        { name: "LLAVE DEL HÉROE", price: "1.00", tag: "BÁSICO", icon: "fa-shield-halved", color: "#95a5a6", btn: "ADQUIRIR" },
+    ],
     desbaneos: [{ name: "UNBAN", price: "10.00", tag: "ÚNICO", icon: "fa-gavel", color: "#ff4500", btn: "COMPRAR" }],
     extras: [{ name: "COSMÉTICOS", price: "7.00", tag: "PACK", icon: "fa-wand-magic-sparkles", color: "#00d2ff", btn: "COMPRAR" }]
 };
@@ -123,7 +129,7 @@ function renderProducts(category) {
     
     (productsData[category] || []).forEach(p => {
         const card = document.createElement("div");
-        card.className = `product-card fade-in`; 
+        card.className = `product-card fade-in category-${category}`;
         card.style.setProperty('--rank-color', p.color);
         
         card.innerHTML = `
