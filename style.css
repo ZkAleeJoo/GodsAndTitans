@@ -1004,3 +1004,52 @@ input:checked + .slider:before {
     transform: scale(1.1);
     box-shadow: 0 0 50px rgba(0, 210, 255, 0.6);
 }
+
+.shop-welcome-box {
+    background: linear-gradient(145deg, #111, #080808);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.welcome-text h2 {
+    color: var(--god-color);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-text p {
+    color: #bbb;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.payment-trust-bar {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.payment-trust-bar i { font-size: 1rem; }
+.secure-tag { color: var(--success-green); margin-left: auto; }
+
+.sidebar-widget {
+    margin-top: 20px;
+    padding: 15px !important;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.monthly-goal .goal-info { font-size: 0.7rem; }
+.monthly-goal .progress-bar { height: 8px; margin-top: 8px; }
