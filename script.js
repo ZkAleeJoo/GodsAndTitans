@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (savedUser) {
         setLoggedUser(savedUser);
     }
-    renderProducts("divinos"); // Carga inicial por defecto
+    renderProducts("permanentes"); 
 });
 
 /**
