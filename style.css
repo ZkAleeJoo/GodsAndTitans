@@ -1108,4 +1108,41 @@ input:checked + .slider:before {
     text-align: left;
     margin-top: 10px; 
 }
+    
+.category-llaves::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(30deg);
+    transition: none;
+    animation: key-shimmer 4s infinite linear;
+}
 
+@keyframes key-shimmer {
+    0% { left: -60%; }
+    20% { left: 120%; }
+    100% { left: 120%; }
+}
+
+.category-llaves .rank-logo {
+    animation: key-float 3s ease-in-out infinite;
+}
+
+@keyframes key-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.category-llaves[style*="--rank-color: #e74c3c"] .rank-logo {
+    filter: drop-shadow(0 0 15px #e74c3c);
+    animation: key-float 3s ease-in-out infinite, caos-glow 1.5s infinite alternate;
+}
+
+@keyframes caos-glow {
+    from { filter: drop-shadow(0 0 5px #e74c3c); }
+    to { filter: drop-shadow(0 0 25px #ff0000); }
+}
