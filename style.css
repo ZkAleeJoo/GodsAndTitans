@@ -192,12 +192,13 @@ html, body {
    3. CABECERA (IP BOX Y LOGO)
    ========================================= */
 .main-header {
-    height: 450px;
+    height: 420px; 
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
     overflow: hidden;
+    padding-top: 20px;
 }
 
 .main-header::before {
@@ -218,22 +219,34 @@ html, body {
     position: relative;
     z-index: 5;
     display: flex;
-    align-items: center;
-    gap: 50px;
+    align-items: center; 
+    justify-content: center; 
+    gap: 60px; 
+    width: 100%;
 }
 
-/* --- Caja de IP Estilo Profesional --- */
 .ip-copy-box {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
     border-radius: 12px;
-    border: 1px solid #333;
-    cursor: pointer;
+    border: 1px solid rgba(255, 215, 0, 0.2);
     display: flex;
     align-items: center;
-    gap: 15px;
-    transition: 0.3s;
-    backdrop-filter: blur(10px);
+    gap: 15px; 
+    min-width: 280px; 
+}
+
+.ip-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ip-title {
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-weight: 900;
 }
 
 .ip-copy-box:hover {
@@ -269,21 +282,23 @@ html, body {
    ========================================= */
 .main-layout {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 30px;
-    max-width: 1200px;
-    margin: -50px auto 100px;
-    position: relative;
-    z-index: 10;
-    padding: 0 20px;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    max-width: 1300px;
+    margin: -35px auto 100px; 
+    position: relative; 
+    z-index: 10; 
+    align-items: start;
 }
 
 .sidebar {
     background: var(--sidebar-bg);
-    padding: 25px;
+    padding: 35px 25px 25px 25px; 
     border-radius: 15px;
-    border: 1px solid #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     height: fit-content;
+    position: relative;
+    z-index: 20; 
 }
 
 .nav-item {
@@ -361,17 +376,30 @@ html, body {
 }
 
 .rank-logo {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 15px var(--rank-color));
-    transition: 0.4s ease;
+    font-size: 4rem; 
+    height: 100px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 0 auto 10px auto; 
+    filter: drop-shadow(0 0 20px var(--rank-color));
+}
+
+rank-logo i {
+    display: block;
+    line-height: 1;
 }
 
 .product-card:hover .rank-logo {
     transform: scale(1.2) rotate(5deg);
 }
 
-.price { font-size: 1.8rem; font-weight: 900; color: var(--gold); }
+.price { 
+    font-size: 1.8rem; 
+    font-weight: 900; 
+    color: var(--gold); 
+    margin-bottom: 20px;  
+}
 
 /* =========================================
    5. META MENSUAL (CORREGIDA)
@@ -650,6 +678,7 @@ html, body {
     width: 100%;
     border: none;
     padding: 14px;
+    margin-top: 5px;
     font-weight: 900;
     text-transform: uppercase;
     border-radius: 8px;
@@ -1053,3 +1082,30 @@ input:checked + .slider:before {
 
 .monthly-goal .goal-info { font-size: 0.7rem; }
 .monthly-goal .progress-bar { height: 8px; margin-top: 8px; }
+
+.category-title {
+    font-size: 1rem;
+    font-weight: 900;
+    color: white; 
+    margin-bottom: 25px;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    border-left: 4px solid var(--gold); 
+}
+
+.section-header {
+    margin-bottom: 35px;
+    padding-left: 0;
+}
+
+.section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1px;
+    text-align: left;
+    margin-top: 10px; 
+}
+
